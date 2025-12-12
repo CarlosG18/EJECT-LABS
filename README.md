@@ -78,136 +78,6 @@ EJECT-LABS/
 
 ---
 
-## 🤝 Como usar o EJECT LABS e como colaborar?
-
-🚀 Como Utilizar o EJECT LABS
-
-Este guia apresenta o passo a passo para iniciar rapidamente um novo projeto utilizando o EJECT LABS, garantindo padronização visual e reutilização dos módulos backend e frontend.
-
-
----
-
-🟦 1. Clonando o EJECT LABS
-
-git clone https://github.com/ejectlabs/ejectlabs-monorepo.git
-echo "cd ejectlabs-monorepo"
-
-
----
-
-🟩 2. Instalando os Módulos Backend (Django)
-
-Cada módulo está localizado em backend/modules/ e pode ser instalado diretamente via pip.
-
-Exemplo — instalando o módulo de autenticação:
-
-pip install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=backend/modules/auth"
-
-Instale quantos módulos desejar:
-
-pip install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=backend/modules/utils"
-pip install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=backend/modules/email"
-
-Depois, adicione no settings.py do seu projeto Django:
-
-INSTALLED_APPS = [
-    "auth_module",
-    "email_module",
-    "utils_module",
-]
-
-
----
-
-🟦 3. Criando um Novo Projeto Backend Base
-
-O monorepo possui um template Django em:
-
-backend/base/base_django
-
-Para iniciar um backend usando a base EJECT:
-
-cp -r backend/base/base_django my_new_api
-cd my_new_api
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-
-
----
-
-🟩 4. Instalando o Frontend Base (React)
-
-Dentro do monorepo há um template pronto em:
-
-frontend/base/react_base
-
-Para iniciar um novo frontend:
-
-cp -r frontend/base/react_base my_new_frontend
-cd my_new_frontend
-npm install
-npm run dev
-
-
----
-
-🧱 5. Utilizando os Componentes da UI
-
-Todos os componentes reutilizáveis estão em:
-
-frontend/ui
-
-Para instalá-los em qualquer projeto:
-
-npm install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=frontend/ui"
-
-Exemplo de uso:
-
-import { Button } from "@ejectlabs/ui";
-
-export default function Home() {
-  return <Button>Entrar</Button>;
-}
-
-
----
-
-🧪 6. Estrutura Recomendada de Desenvolvimento
-
-Use o frontend/base para iniciar o layout.
-
-Use os módulos backend para funcionalidades prontas.
-
-Use o UI system para manter o padrão EJECT.
-
-Mantenha tudo versionado no monorepo.
-
-
-
----
-
-🎯 7. Objetivo
-
-O EJECT LABS serve para:
-
-acelerar o desenvolvimento,
-
-padronizar design e arquitetura,
-
-evitar retrabalho,
-
-criar produtos com identidade visual unificada,
-
-dar maturidade técnica aos projetos da EJECT.
-
-
-🤝 Guia de Contribuição — EJECT LABS
-
-Obrigado por contribuir com o EJECT LABS! Este guia explica como colaborar de forma padronizada e eficiente no monorepo. Nosso objetivo é garantir qualidade, consistência e evolução contínua dos módulos backend, frontend e da base de projetos.
-
----
-
 ## 🎓 Integração com a Trilha de Nivelamento
 
 Os projetos do EJECT LABS são usados como:
@@ -217,46 +87,6 @@ Os projetos do EJECT LABS são usados como:
 * ✅ Casos reais de desenvolvimento
 
 Todo esforço aplicado gera **valor direto para a EJECT**.
-
----
-
-## 🚦 Projetos em Andamento no EJECT LABS
-
-Aqui você encontra a vitrine oficial dos projetos que estão sendo idealizados, desenvolvidos, testados e consolidados dentro do **EJECT LABS**.
-
-Todos os projetos listados abaixo possuem acesso direto ao seu **README**, **repositório**, **documentação**, **backlog** e **status de execução**, garantindo total transparência, rastreabilidade e padronização do processo de inovação.
-
-### 🧠 Em Ideação / Planejamento ![Status](https://img.shields.io/badge/status-ativo-success)
-
-| Projeto | README | Repositório | Status |
-|--------|--------|-------------|--------|
-| 🧩 SAM — Sistema de Advertência de Membros | [Acessar Escopo](LINK) | [Acessar Repositorio](LINK) | Em andamento |
-
-
-### ✅ Em Desenvolvimento ![Status](https://img.shields.io/badge/status-aguardando-yellow)
-
-🚧 Nenhum projeto no momento
-
-| Projeto | README | Repositório | Status |
-|--------|--------|-------------|--------|
-| — | — | — | — |
-
-### 🟡 Em Validação ![Status](https://img.shields.io/badge/status-aguardando-yellow)
-
-🚧 Nenhum projeto no momento
-
-| Projeto | README | Repositório | Status |
-|--------|--------|-------------|--------|
-| — | — | — | — |
-
-
-### 🏁 Concluídos ![Status](https://img.shields.io/badge/status-aguardando-yellow)
-
-🚧 Nenhum projeto no momento
-
-| Projeto | README | Repositório | Status |
-|--------|--------|-------------|--------|
-| — | — | — | — | 
 
 ---
 
@@ -271,14 +101,13 @@ Todos podem propor ideias, desenvolver projetos e documentar soluções.
 
 ---
 
-## 🤝 Como Contribuir
+## Tópicos
 
-1. Escolha um projeto ativo
-2. Laboratório Contínuo de Inovação da EJECTLeia a documentação
-3. Crie uma branch
-4. Desenvolva
-5. Documente
-6. Abra um Pull Request
+alguns tópicos importantes sobre o EJECT LABS:
+
+- [🚦 Projetos em Andamento no EJECT LABS]()
+- [🚀 Como Utilizar o EJECT LABS]()
+- [🤝 Como Contribuir]() 
 
 <div align="center">
     <p><b>🧠 EJECT LABS — Onde ideias deixam de ser conceito e viram soluções reais.</b></p>
