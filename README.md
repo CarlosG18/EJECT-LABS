@@ -35,16 +35,176 @@ No EJECT LABS, toda ideia tem como norte se tornar **produto, sistema, melhoria 
 
 ## 🔬 Como o LABS Funciona
 
-* Mensalmente, durante as **RPs**, são discutidas ideias
-* As ideias viram **escopos e backlogs**
-* Tudo é **documentado no repositório**
-* Os projetos passam por ciclos de:
+O LABS é uma iniciativa criada para promover desenvolvimento ágil, modular e colaborativo dentro da EJECT. A ideia é reduzir esforços repetitivos e permitir que nossos membros foquem no que realmente importa: inovação, criatividade e construção de novas ideias.
 
-  * Ideação
-  * Planejamento
-  * Desenvolvimento
-  * Validação
-  * Conclusão
+Este repositório é organizado em módulos de backend e frontend. Assim, para cada novo projeto, é possível:
+
+- Utilizar uma base padrão de frontend, inspirada no mockup do CVB;
+
+- Reaproveitar módulos já desenvolvidos de backend, acelerando o processo;
+
+- Concentrar o desenvolvimento apenas nas lógicas específicas de cada ideia.
+
+
+Dessa forma, o LABS cria um ambiente mais eficiente e escalável, permitindo que novos projetos nasçam mais rápido e com mais qualidade.
+
+---
+
+## 🗂️ Organização do Repositório
+
+```bash
+EJECT-LABS/
+│
+├── backend/
+│   ├── modules/
+│   │   ├── auth/
+│   │   ├── email/
+│   │   ├── utils/
+│   │   └── crud/
+│   └── base_project/
+│       └── django_base_template/
+│
+├── frontend/
+│   ├── ui/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── styles/
+│   │   └── theme.js
+│   └── base/
+│       └── react_base_template/
+│
+└── docs/
+```
+
+---
+
+## 🤝 Como usar o EJECT LABS e como colaborar?
+
+🚀 Como Utilizar o EJECT LABS
+
+Este guia apresenta o passo a passo para iniciar rapidamente um novo projeto utilizando o EJECT LABS, garantindo padronização visual e reutilização dos módulos backend e frontend.
+
+
+---
+
+🟦 1. Clonando o EJECT LABS
+
+git clone https://github.com/ejectlabs/ejectlabs-monorepo.git
+echo "cd ejectlabs-monorepo"
+
+
+---
+
+🟩 2. Instalando os Módulos Backend (Django)
+
+Cada módulo está localizado em backend/modules/ e pode ser instalado diretamente via pip.
+
+Exemplo — instalando o módulo de autenticação:
+
+pip install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=backend/modules/auth"
+
+Instale quantos módulos desejar:
+
+pip install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=backend/modules/utils"
+pip install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=backend/modules/email"
+
+Depois, adicione no settings.py do seu projeto Django:
+
+INSTALLED_APPS = [
+    "auth_module",
+    "email_module",
+    "utils_module",
+]
+
+
+---
+
+🟦 3. Criando um Novo Projeto Backend Base
+
+O monorepo possui um template Django em:
+
+backend/base/base_django
+
+Para iniciar um backend usando a base EJECT:
+
+cp -r backend/base/base_django my_new_api
+cd my_new_api
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+
+---
+
+🟩 4. Instalando o Frontend Base (React)
+
+Dentro do monorepo há um template pronto em:
+
+frontend/base/react_base
+
+Para iniciar um novo frontend:
+
+cp -r frontend/base/react_base my_new_frontend
+cd my_new_frontend
+npm install
+npm run dev
+
+
+---
+
+🧱 5. Utilizando os Componentes da UI
+
+Todos os componentes reutilizáveis estão em:
+
+frontend/ui
+
+Para instalá-los em qualquer projeto:
+
+npm install "git+https://github.com/ejectlabs/ejectlabs-monorepo.git#subdirectory=frontend/ui"
+
+Exemplo de uso:
+
+import { Button } from "@ejectlabs/ui";
+
+export default function Home() {
+  return <Button>Entrar</Button>;
+}
+
+
+---
+
+🧪 6. Estrutura Recomendada de Desenvolvimento
+
+Use o frontend/base para iniciar o layout.
+
+Use os módulos backend para funcionalidades prontas.
+
+Use o UI system para manter o padrão EJECT.
+
+Mantenha tudo versionado no monorepo.
+
+
+
+---
+
+🎯 7. Objetivo
+
+O EJECT LABS serve para:
+
+acelerar o desenvolvimento,
+
+padronizar design e arquitetura,
+
+evitar retrabalho,
+
+criar produtos com identidade visual unificada,
+
+dar maturidade técnica aos projetos da EJECT.
+
+
+🤝 Guia de Contribuição — EJECT LABS
+
+Obrigado por contribuir com o EJECT LABS! Este guia explica como colaborar de forma padronizada e eficiente no monorepo. Nosso objetivo é garantir qualidade, consistência e evolução contínua dos módulos backend, frontend e da base de projetos.
 
 ---
 
@@ -62,7 +222,7 @@ Todo esforço aplicado gera **valor direto para a EJECT**.
 
 ## 🚦 Projetos em Andamento no EJECT LABS
 
-Aqui você encontra a vitrine oficial dos projetos que estão sendo idealizados, desenvolvidos, testados e consolidados dentro do **EJECT LABS**. Cada iniciativa representa uma oportunidade real de aprendizado, inovação e geração de valor para a EJECT, conectando prática, tecnologia e crescimento profissional.
+Aqui você encontra a vitrine oficial dos projetos que estão sendo idealizados, desenvolvidos, testados e consolidados dentro do **EJECT LABS**.
 
 Todos os projetos listados abaixo possuem acesso direto ao seu **README**, **repositório**, **documentação**, **backlog** e **status de execução**, garantindo total transparência, rastreabilidade e padronização do processo de inovação.
 
@@ -99,20 +259,6 @@ Todos os projetos listados abaixo possuem acesso direto ao seu **README**, **rep
 | — | — | — | — | 
 
 ---
-
-## 🗂️ Organização do Repositório
-
-```bash
-EJECT-LABS/
-├── produtos/
-├── sistemas-internos/
-├── iniciativas/
-├── desafios-trilha/
-├── backlog/
-├── documentacao/
-├── templates/
-└── assets/
-```
 
 ## 👥 Quem Participa
 
